@@ -1093,10 +1093,17 @@
     </div>
 
     <!-- MailerLite Form -->
-    <div class="ml-form-wrapper" style="max-width:480px; margin:32px auto 0; opacity:1;">
-      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+    <div id="ml-form-section" style="max-width:520px; margin:32px auto 0; background:#ffffff; padding:40px; box-shadow:0 8px 40px rgba(0,0,0,0.1);">
+      <p style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#c9a84c; margin-bottom:8px; text-align:center;">Start Here — It's Free</p>
+      <p style="font-family:'Montserrat',sans-serif; font-size:13px; color:#444; margin-bottom:24px; text-align:center; line-height:1.6;">Enter your details below to get instant access to your free Performance Assessment</p>
       <div class="ml-embedded" data-form="TBtJjw"></div>
     </div>
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof ml !== 'undefined') { ml('init'); }
+      });
+    </script>
 
     <div class="ps-box animate" style="margin-top:48px;">
       <p><strong>P.S.</strong> — Most athletes who take this assessment are shocked by what they discover. Not because the results are bad — but because they finally have a NAME for something they've been feeling for years but couldn't explain. Take the 5 minutes. You'll understand exactly what I mean.</p>
