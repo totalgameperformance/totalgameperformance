@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Performance Assessment | Total Game Performance</title>
+<meta name="description" content="Discover the hidden mental performance killer sabotaging athletes who should be dominating. Take the free 5-minute assessment and find out exactly what's holding you back.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f8f7f4;
+    --bg-cream: #f0ede6;
+    --dark: #1a1a1a;
+    --gold: #c9a84c;
+    --gold-light: rgba(201, 168, 76, 0.15);
+    --gold-border: rgba(201, 168, 76, 0.3);
+    --body: #444444;
+    --muted: #888888;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--dark);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes goldPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(201,168,76,0); }
+  }
+  @keyframes lineGrow {
+    from { width: 0; }
+    to { width: 48px; }
+  }
+
+  .animate { opacity: 0; animation: fadeUp 0.8s ease forwards; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.25s; }
+  .delay-3 { animation-delay: 0.4s; }
+  .delay-4 { animation-delay: 0.55s; }
+  .delay-5 { animation-delay: 0.7s; }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--dark);
+    padding: 10px 24px;
+    text-align: center;
+  }
+  .top-bar p {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--bg);
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+  }
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-brand-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--dark);
+    line-height: 1;
+  }
+  .nav-brand-name span { color: var(--gold); }
+  .nav-sub {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .nav-cta:hover {
+    background: var(--dark);
+    color: var(--gold);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+    padding: 100px 60px 90px;
+    text-align: center;
+  }
+
+  .hero::before {
+    content: 'TGP';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 400px;
+    color: rgba(255,255,255,0.025);
+    letter-spacing: -10px;
+    line-height: 1;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold-border);
+    padding: 6px 16px;
+    margin-bottom: 32px;
+    animation: fadeIn 0.6s ease forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 .gold { color: var(--gold); }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    max-width: 680px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+  }
+
+  .hero-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 20px 48px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: goldPulse 2.5s infinite;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary:hover {
+    background: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 18px 48px;
+    text-decoration: none;
+    border: 1px solid var(--gold-border);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-secondary:hover {
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  .hero-note {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+  }
+
+  /* ── SOCIAL PROOF STRIP ── */
+  .proof-strip {
+    background: var(--gold);
+    padding: 16px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .proof-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .proof-icon {
+    font-size: 16px;
+  }
+  .proof-text {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dark);
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 90px 60px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .section-full {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::after {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05;
+    color: var(--dark);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  h2 .gold { color: var(--gold); }
+
+  .lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 400;
+    color: var(--body);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--body);
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+
+  /* ── PROBLEM SECTION ── */
+  .problem-section {
+    background: var(--bg-cream);
+  }
+  .problem-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 90px 60px;
+  }
+
+  .problem-box {
+    border-left: 3px solid var(--gold);
+    padding: 32px 40px;
+    background: var(--white);
+    margin: 40px 0;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+  }
+  .problem-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ── MECHANISM ── */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2px;
+    margin: 48px 0;
+    background: rgba(0,0,0,0.06);
+  }
+  .pillar-card {
+    background: var(--white);
+    padding: 32px 28px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .pillar-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  .pillar-card:hover::before { transform: scaleX(1); }
+  .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+  .pillar-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 8px;
+    color: rgba(201,168,76,0.2);
+  }
+  .pillar-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .pillar-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── WHAT YOU GET ── */
+  .gets-section {
+    background: var(--dark);
+    padding: 90px 60px;
+  }
+  .gets-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .gets-section h2 { color: var(--white); }
+  .gets-section .eyebrow { color: var(--gold); }
+  .gets-section .lead { color: rgba(255,255,255,0.6); }
+
+  .gets-list {
+    list-style: none;
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .gets-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: rgba(255,255,255,0.04);
+    padding: 24px 28px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+  }
+  .gets-list li:hover {
+    border-left-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+  .gets-check {
+    color: var(--gold);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .gets-content-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .gets-content-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 48px 0;
+  }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 60px;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .step-desc {
+    font-size: 15px;
+    color: var(--body);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ── OBJECTION ── */
+  .objection-section {
+    background: var(--bg-cream);
+    padding: 80px 60px;
+  }
+  .objection-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .objection-box {
+    background: var(--white);
+    padding: 48px;
+    position: relative;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+  }
+  .objection-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    line-height: 1.5;
+  }
+  .objection-answer {
+    font-size: 15px;
+    color: var(--body);
+    line-height: 1.9;
+    margin: 0;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 48px 0;
+  }
+  @media(max-width: 640px) { .testimonials { grid-template-columns: 1fr; } }
+
+  .testimonial-card {
+    background: var(--white);
+    padding: 32px;
+    border-top: 3px solid var(--gold);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .testimonial-author {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── VALUE STACK ── */
+  .value-section {
+    background: var(--dark);
+    padding: 80px 60px;
+    text-align: center;
+  }
+  .value-inner { max-width: 680px; margin: 0 auto; }
+  .value-section h2 { color: var(--white); }
+  .value-section .lead { color: rgba(255,255,255,0.6); }
+
+  .value-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 100px;
+    color: var(--gold);
+    line-height: 1;
+    margin: 32px 0 8px;
+  }
+  .value-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 32px;
+  }
+
+  /* ── GUIDE ── */
+  .guide-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 100%;
+  }
+  @media(max-width:768px){ .guide-section { grid-template-columns: 1fr; } }
+
+  .guide-left {
+    background: var(--bg-cream);
+    padding: 80px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .guide-photo-placeholder {
+    width: 280px;
+    height: 340px;
+    background: linear-gradient(135deg, #ddd 0%, #ccc 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .guide-photo-placeholder::after {
+    content: 'YOUR PHOTO HERE';
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #999;
+  }
+  .guide-photo-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 2px solid var(--gold);
+    pointer-events: none;
+  }
+
+  .guide-right {
+    background: var(--white);
+    padding: 80px 60px;
+  }
+  .guide-right h2 { font-size: clamp(32px, 3vw, 44px); }
+  .guide-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .credential {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--dark);
+    text-transform: uppercase;
+  }
+  .credential-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: var(--bg-cream);
+    padding: 100px 60px;
+    text-align: center;
+  }
+  .final-cta-inner { max-width: 680px; margin: 0 auto; }
+  .final-cta h2 { font-size: clamp(40px, 6vw, 72px); }
+
+  .cta-features {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin: 32px 0;
+  }
+  .cta-feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cta-feature-dot { color: var(--gold); }
+
+  .ps-box {
+    margin-top: 60px;
+    padding: 32px 40px;
+    background: var(--white);
+    border-left: 3px solid var(--gold);
+    text-align: left;
+  }
+  .ps-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--body);
+    line-height: 1.8;
+    margin: 0;
+  }
+  .ps-box p strong {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  /* ── MAILERLITE FORM OVERRIDE STYLES ── */
+  .ml-form-wrapper {
+    margin: 32px auto 0;
+    max-width: 480px;
+  }
+
+  /* Style the MailerLite embedded form to match brand */
+  .ml-embedded .ml-form-embedBody {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+  .ml-embedded input[type="text"],
+  .ml-embedded input[type="email"] {
+    border: 2px solid rgba(0,0,0,0.12) !important;
+    border-radius: 0 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    padding: 16px 20px !important;
+    background: var(--white) !important;
+    color: var(--dark) !important;
+    width: 100% !important;
+    margin-bottom: 12px !important;
+  }
+  .ml-embedded input:focus {
+    border-color: var(--gold) !important;
+    outline: none !important;
+  }
+  .ml-embedded button[type="submit"] {
+    background: var(--gold) !important;
+    color: var(--dark) !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 2.5px !important;
+    text-transform: uppercase !important;
+    padding: 20px 48px !important;
+    border: none !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    animation: goldPulse 2.5s infinite !important;
+  }
+  .ml-embedded button[type="submit"]:hover {
+    background: var(--dark) !important;
+    color: var(--gold) !important;
+  }
+
+  /* Dark section form variant */
+  .form-dark .ml-embedded input[type="text"],
+  .form-dark .ml-embedded input[type="email"] {
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.15) !important;
+    color: var(--white) !important;
+  }
+  .form-dark .ml-embedded input::placeholder {
+    color: rgba(255,255,255,0.4) !important;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 32px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: var(--white);
+  }
+  .footer-brand span { color: var(--gold); }
+  .footer-text {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── DIVIDER ── */
+  .gold-line {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width: 768px) {
+    nav { padding: 16px 24px; }
+    section { padding: 60px 24px; }
+    .hero { padding: 70px 24px 60px; }
+    .proof-strip { padding: 16px 24px; gap: 24px; }
+    .gets-section { padding: 60px 24px; }
+    .objection-section { padding: 60px 24px; }
+    .value-section { padding: 60px 24px; }
+    .guide-right { padding: 60px 24px; }
+    .guide-left { padding: 60px 24px; }
+    .final-cta { padding: 70px 24px; }
+    footer { padding: 24px; }
+    .problem-inner { padding: 60px 24px; }
+    .objection-inner { padding: 0; }
+    .gets-inner { padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <p>⚡ Free for a Limited Time — Take the Performance Assessment Now</p>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-brand-name">Total Game <span>Performance</span></div>
+    <div class="nav-sub">Dan Andrews · Mental Performance Coach</div>
+  </div>
+  <a href="#assessment" class="nav-cta">Free Assessment →</a>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-eyebrow animate delay-1">Mental Performance Assessment</div>
+  <h1 class="animate delay-2">The Hidden Mental <span class="gold">"Performance Killer"</span> Sabotaging Athletes Who Should Be Dominating...</h1>
+  <p class="hero-sub animate delay-3">It's NOT lack of talent. It's NOT lack of effort. Discover the REAL reason you're underperforming under pressure — in just 5 minutes.</p>
+  <div class="hero-cta-wrap animate delay-4">
+    <a href="#assessment" class="btn-primary" onclick="document.getElementById('assessment').scrollIntoView({behavior:'smooth'}); return false;">Yes — Show Me My Results →</a>
+    <p class="hero-note">⚡ Instant Access &nbsp;·&nbsp; 5 Minutes &nbsp;·&nbsp; 100% Free</p>
+  </div>
+</div>
+
+<!-- Social Proof Strip -->
+<div class="proof-strip">
+  <div class="proof-item">
+    <span class="proof-icon">🏆</span>
+    <span class="proof-text">Used by Competitive Athletes</span>
+  </div>
+  <div class="proof-item">
+    <span class="proof-icon">⚡</span>
+    <span class="proof-text">Results in 5 Minutes</span>
+  </div>
+  <div class="proof-item">
+    <span class="proof-icon">🎯</span>
+    <span class="proof-text">Personalized to You</span>
+  </div>
+  <div class="proof-item">
+    <span class="proof-icon">🔒</span>
+    <span class="proof-text">100% Free — No Credit Card</span>
+  </div>
+</div>
+
+<!-- Problem Section -->
+<div class="problem-section section-full">
+  <div class="problem-inner">
+    <div class="eyebrow animate">The Real Problem</div>
+    <h2 class="animate">What if everything you've been told about <span class="gold">athletic performance</span> is only half the story?</h2>
+
+    <p class="lead animate">You've been training your body... but there's another game happening — one that most coaches never talk about, most athletes never train... and it's quietly costing you more than you know.</p>
+
+    <div class="problem-box animate">
+      <p>The athletes who plateau — who train hard but can't seem to break through — almost always have the same problem. It's not physical. It's a set of invisible mental patterns running in the background like a virus on a computer... slowing everything down. Creating doubt at the worst moments. Making pressure feel like quicksand instead of fuel.</p>
+    </div>
+
+    <p class="animate">And here's the crazy part... most of these athletes have <strong>NO idea it's happening.</strong></p>
+
+    <p class="animate">They think they just need to work harder. Train more. Push through it. But that's like trying to fix a software problem by buying a bigger computer. It doesn't work.</p>
+
+    <p class="animate">What <strong>DOES</strong> work is identifying exactly which mental patterns are running — and then reprogramming them. That's exactly what the Performance Assessment does.</p>
+  </div>
+</div>
+
+<div class="gold-line"></div>
+
+<!-- Mechanism Section -->
+<section>
+  <div class="eyebrow animate">The Mental Performance Gap</div>
+  <h2 class="animate">There Are Only <span class="gold">5 Mental Pillars</span> Standing Between You and Peak Performance</h2>
+
+  <p class="lead animate">I call it the "Mental Performance Gap" — the distance between how you perform in practice and how you perform when it actually matters. Every athlete has one. The question is: which of your 5 pillars is creating it?</p>
+
+  <p class="animate">Miss ONE of these — and it poisons everything else. Nail ALL five — and pressure becomes your superpower.</p>
+
+  <div class="pillars-grid animate">
+    <div class="pillar-card">
+      <div class="pillar-number">01</div>
+      <div class="pillar-name">Focus & Concentration</div>
+      <p class="pillar-desc">Your ability to lock in and stay present when distractions and pressure are at their peak.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-number">02</div>
+      <div class="pillar-name">Confidence Under Pressure</div>
+      <p class="pillar-desc">Whether your belief in yourself holds firm or crumbles the moment the stakes rise.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-number">03</div>
+      <div class="pillar-name">Emotional Control</div>
+      <p class="pillar-desc">How well you manage frustration, anxiety, and fear in real-time competition.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-number">04</div>
+      <div class="pillar-name">Mental Resilience</div>
+      <p class="pillar-desc">Your ability to bounce back from mistakes and setbacks without losing momentum.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-number">05</div>
+      <div class="pillar-name">Peak Performance Mindset</div>
+      <p class="pillar-desc">The overall mental framework that determines how you approach competition and growth.</p>
+    </div>
+  </div>
+
+  <p class="animate" style="text-align:center; font-weight: 600;">The Performance Assessment identifies exactly which pillar needs attention FIRST — so you stop guessing and start winning.</p>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- What You Get -->
+<div class="gets-section section-full">
+  <div class="gets-inner">
+    <div class="eyebrow animate" style="color:var(--gold)">Here's What You Get</div>
+    <h2 class="animate" style="color:var(--white)">Everything You'll Discover — <span class="gold">Completely FREE</span></h2>
+    <p class="lead animate">This is the same assessment I use with my private clients before we do anything else together. Today you can access it for free.</p>
+
+    <ul class="gets-list animate">
+      <li>
+        <span class="gets-check">✦</span>
+        <div>
+          <div class="gets-content-title">Your Personal Mental Performance Score</div>
+          <p class="gets-content-desc">Rated across all 5 pillars so you know exactly where you stand right now — no guessing, no generic advice.</p>
+        </div>
+      </li>
+      <li>
+        <span class="gets-check">✦</span>
+        <div>
+          <div class="gets-content-title">Your #1 Performance Killer Identified</div>
+          <p class="gets-content-desc">The specific mental block doing the most damage to your results today — pinpointed precisely.</p>
+        </div>
+      </li>
+      <li>
+        <span class="gets-check">✦</span>
+        <div>
+          <div class="gets-content-title">Your Mental Strengths Revealed</div>
+          <p class="gets-content-desc">Discover which pillars are already working for you so you can lean into them strategically.</p>
+        </div>
+      </li>
+      <li>
+        <span class="gets-check">✦</span>
+        <div>
+          <div class="gets-content-title">A Clear Starting Point — No More Guessing</div>
+          <p class="gets-content-desc">A precise roadmap for YOUR mental game. Know exactly what to work on first for maximum performance gains.</p>
+        </div>
+      </li>
+      <li>
+        <span class="gets-check">✦</span>
+        <div>
+          <div class="gets-content-title">Instant Results</div>
+          <p class="gets-content-desc">Takes 5 minutes. You'll have your personalized results immediately — no waiting, no email delay.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div style="text-align:center;">
+      <a href="#assessment" class="btn-primary" onclick="document.getElementById('assessment').scrollIntoView({behavior:'smooth'}); return false;">Take the Free Assessment Now →</a>
+    </div>
+  </div>
+</div>
+
+<!-- How It Works -->
+<section>
+  <div class="eyebrow animate">Simple 3-Step Process</div>
+  <h2 class="animate">How It <span class="gold">Works</span></h2>
+
+  <div class="steps animate">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div>
+        <div class="step-title">Take the FREE Performance Assessment</div>
+        <p class="step-desc">Answer questions specifically designed to reveal your mental performance patterns. Takes 5 minutes. No fluff, no filler — just the questions that matter.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div>
+        <div class="step-title">Get Your Personalized Results</div>
+        <p class="step-desc">See exactly which mental areas are holding you back — focus, confidence, pressure response, self-talk and more — scored and ranked for you instantly.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div>
+        <div class="step-title">Know Your Exact Next Step</div>
+        <p class="step-desc">Walk away with total clarity on what to work on first. Stop wasting time on the wrong things and start making real, measurable gains in your mental game.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- Objection -->
+<div class="objection-section section-full">
+  <div class="objection-inner">
+    <div class="eyebrow animate">Addressing the Doubt</div>
+    <h2 class="animate">Still Thinking You Just Need <span class="gold">More Reps?</span></h2>
+    <div class="objection-box animate">
+      <div class="objection-quote">"I don't need mental coaching — I just need more practice."</div>
+      <p class="objection-answer">The athletes who say this are usually the ones struggling most under pressure. Physical reps build skill. Mental reps build the ability to <em>use</em> that skill when it counts most — in the final minutes, in the championship game, when everyone is watching.<br><br>Here's the truth: you can be the most talented athlete on the field and still underperform. Not because you didn't work hard enough. But because nobody ever trained the part of your game that determines whether all that hard work actually shows up.<br><br>The assessment takes 5 minutes. What you learn could change an entire season.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<section>
+  <div class="eyebrow animate">What Athletes Are Saying</div>
+  <h2 class="animate">Real Results from <span class="gold">Real Athletes</span></h2>
+
+  <div class="testimonials animate">
+    <div class="testimonial-card">
+      <div class="testimonial-quote">"I thought I just needed to work harder. Turns out I had a focus problem I didn't even know about. This changed how I train completely."</div>
+      <div class="testimonial-author">— Competitive Athlete, Soccer</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-quote">"I was performing great in practice and falling apart in games. After the assessment I finally understood why — and more importantly, what to do about it."</div>
+      <div class="testimonial-author">— Competitive Athlete, Basketball</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-quote">"I've worked with a lot of coaches. Nobody ever addressed the mental side like this. The assessment gave me a roadmap I actually knew how to use."</div>
+      <div class="testimonial-author">— College Athlete, Track</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-quote">"5 minutes. That's all it took to finally put a name on what had been costing me for years. Wish I'd found this sooner."</div>
+      <div class="testimonial-author">— Competitive Athlete, Baseball</div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- Value -->
+<div class="value-section section-full">
+  <div class="value-inner">
+    <div class="eyebrow animate" style="justify-content:center; color:var(--gold)">Why Free?</div>
+    <h2 class="animate" style="color:var(--white)">Athletes Pay Me <span class="gold">Thousands</span> For What This Assessment Reveals</h2>
+    <p class="lead animate">One bad mental game moment can cost you a starting spot. A scholarship. A championship. I've seen it happen — and I want to make sure it doesn't happen to you.</p>
+    <div class="value-number animate">$0</div>
+    <div class="value-label animate">Your investment today</div>
+    <p class="animate" style="color:rgba(255,255,255,0.5); font-size:14px;">I'm giving this away because I've seen too many talented athletes quit — not because they lacked ability — but because nobody ever showed them what was actually going wrong. Once you see your results, you'll finally understand what's been holding you back. That's good enough for me.</p>
+  </div>
+</div>
+
+<!-- Guide Section -->
+<div class="guide-section section-full">
+  <div class="guide-left">
+    <div class="guide-photo-placeholder"></div>
+  </div>
+  <div class="guide-right">
+    <div class="eyebrow animate">Your Guide</div>
+    <h2 class="animate">Dan <span class="gold">Andrews</span></h2>
+    <p class="lead animate">Mental Performance Coach & College Soccer Coach</p>
+    <p class="animate">I've spent years working at the intersection of elite sport and mental performance — as both a coach on the sideline and a mental performance specialist behind the scenes.</p>
+    <p class="animate">What I've discovered is that the gap between good and great almost never comes down to physical ability. It comes down to what's happening between the ears when the pressure is highest.</p>
+    <p class="animate">The Performance Assessment is the first step I take with every athlete I work with — because you can't fix what you can't see.</p>
+    <div class="guide-credentials animate">
+      <div class="credential"><div class="credential-dot"></div>Mental Performance Coach</div>
+      <div class="credential"><div class="credential-dot"></div>College Soccer Coach</div>
+      <div class="credential"><div class="credential-dot"></div>Founder — Total Game Performance</div>
+      <div class="credential"><div class="credential-dot"></div>Specialist in Pressure Performance</div>
+    </div>
+  </div>
+</div>
+
+<div class="gold-line"></div>
+
+<!-- Final CTA -->
+<div class="final-cta section-full" id="assessment">
+  <div class="final-cta-inner">
+    <div class="eyebrow animate" style="justify-content:center;">The Next Step Is Yours</div>
+    <h2 class="animate">You've Already Put In <span class="gold">The Work.</span></h2>
+    <p class="lead animate">Now find out what's standing between you and the performance you've earned. It's free. It takes 5 minutes. And it might be the most important thing you do for your athletic career this year.</p>
+
+    <div class="cta-features animate">
+      <div class="cta-feature"><span class="cta-feature-dot">✦</span> Free</div>
+      <div class="cta-feature"><span class="cta-feature-dot">✦</span> 5 Minutes</div>
+      <div class="cta-feature"><span class="cta-feature-dot">✦</span> Instant Results</div>
+      <div class="cta-feature"><span class="cta-feature-dot">✦</span> No Credit Card</div>
+    </div>
+
+    <!-- MailerLite Form -->
+    <div style="max-width:520px; margin:32px auto 0;">
+      <p style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#c9a84c; margin-bottom:8px; text-align:center;">Start Here — It's Free</p>
+      <p style="font-family:'Montserrat',sans-serif; font-size:13px; color:#444444; margin-bottom:24px; text-align:center; line-height:1.6;">Enter your details below to get instant access to your free Performance Assessment</p>
+
+      <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1771504");</style>
+      <style type="text/css">
+        .ml-form-embedSubmitLoad{display:inline-block;width:20px;height:20px;}
+        .ml-form-embedSubmitLoad:after{content:" ";display:block;width:11px;height:11px;margin:1px;border-radius:50%;border:4px solid #fff;border-color:#1a1a1a #1a1a1a #1a1a1a transparent;animation:ml-form-embedSubmitLoad 1.2s linear infinite;}
+        @keyframes ml-form-embedSubmitLoad{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+        #mlb2-37392731.ml-form-embedContainer{box-sizing:border-box;display:table;margin:0 auto;position:static;width:100%!important;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper{background-color:#f8f7f4;border-width:0px;border-color:transparent;border-radius:0px;border-style:solid;box-sizing:border-box;display:inline-block!important;margin:0;padding:0;position:relative;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper.embedForm{max-width:520px;width:100%;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody{padding:20px 20px 0 20px;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent{text-align:left;margin:0 0 20px 0;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow{margin:0 0 10px 0;width:100%;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item{margin:0;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input{background-color:#ffffff!important;color:#333333!important;border-color:#cccccc;border-radius:0px!important;border-style:solid!important;border-width:1px!important;font-family:'Montserrat',sans-serif;font-size:14px!important;height:auto;line-height:21px!important;margin-bottom:0;margin-top:0;padding:14px 16px!important;width:100%!important;box-sizing:border-box!important;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit{margin:0 0 20px 0;float:left;width:100%;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button{background-color:#c9a84c!important;border:none!important;border-radius:0px!important;box-shadow:none!important;color:#1a1a1a!important;cursor:pointer;font-family:'Montserrat',sans-serif!important;font-size:12px!important;font-weight:800!important;letter-spacing:2px!important;text-transform:uppercase!important;line-height:21px!important;height:auto;padding:16px!important;width:100%!important;box-sizing:border-box!important;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover{background-color:#1a1a1a!important;color:#c9a84c!important;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody{padding:20px;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4{color:#1a1a1a;font-family:'Montserrat',sans-serif;font-size:20px;font-weight:700;margin:0 0 10px 0;text-align:center;}
+        #mlb2-37392731.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p{color:#444444;font-family:'Montserrat',sans-serif;font-size:14px;text-align:center;}
+        .ml-error input{border-color:red!important;}
+        .ml-error label:first-child{color:#ff0000!important;}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+      </style>
+
+      <div id="mlb2-37392731" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-37392731">
+        <div class="ml-form-align-center">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <div class="ml-form-embedContent" style="margin-bottom:0px;"></div>
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2110679/forms/179861358217528877/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+                  <div class="ml-form-fieldRow">
+                    <div class="ml-field-group ml-field-name">
+                      <input aria-label="name" type="text" class="form-control" name="fields[name]" placeholder="First Name" autocomplete="given-name">
+                    </div>
+                  </div>
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email Address" autocomplete="email">
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="ml-submit" value="1">
+                <div class="ml-form-embedSubmit">
+                  <button type="submit" class="primary">Yes — Show Me My Results →</button>
+                  <button disabled="disabled" style="display:none;" type="button" class="loading">
+                    <div class="ml-form-embedSubmitLoad"></div>
+                    <span class="sr-only">Loading...</span>
+                  </button>
+                </div>
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display:none;">
+              <div class="ml-form-successContent">
+                <h4>You're in! 🎯</h4>
+                <p>Taking you to your Performance Assessment now...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function ml_webform_success_37392731() {
+          try { window.top.location.href = 'https://tally.so/r/QKDovX'; }
+          catch(e) { window.location.href = 'https://tally.so/r/QKDovX'; }
+        }
+      </script>
+      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+      <script>fetch("https://assets.mailerlite.com/jsonp/2110679/forms/179861358217528877/takel")</script>
+    </div>
+
+    <div class="ps-box animate" style="margin-top:48px;">
+      <p><strong>P.S.</strong> — Most athletes who take this assessment are shocked by what they discover. Not because the results are bad — but because they finally have a NAME for something they've been feeling for years but couldn't explain. Take the 5 minutes. You'll understand exactly what I mean.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-brand">Total Game <span>Performance</span></div>
+  <div class="footer-text">© 2025 Dan Andrews · Total Game Performance · All Rights Reserved</div>
+  <div class="footer-text">Privacy Policy &nbsp;·&nbsp; Terms</div>
+</footer>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        entry.target.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.animate').forEach(el => {
+    // Only observe elements that aren't already in viewport on load
+    if (!el.closest('.hero')) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      observer.observe(el);
+    }
+  });
+</script>
+
+</body>
+</html>
