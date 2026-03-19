@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 Mental Mistakes Soccer Players Make Under Pressure — FREE Guide | Total Game Performance</title>
+  <meta name="description" content="Discover the 5 mental mistakes that destroy performance under pressure — and exactly how to fix them. Free guide for soccer players aged 12–22." />
+
+  <!-- MailerLite form CSS -->
+  <link rel="stylesheet" href="https://assets.mlcdn.com/fonts.css?version=1773928" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================
+       CSS VARIABLES — TGP BRAND SYSTEM
+    ============================================ */
+    :root {
+      --cream:     #F4EDD8;
+      --cream-mid: #EDE0C4;
+      --dark:      #1A1A1A;
+      --dark-mid:  #2C2C2C;
+      --gold:      #C8A44A;
+      --gold-light:#E0BC6E;
+      --gold-dim:  #A07E34;
+      --white:     #FFFFFF;
+
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-serif:   'DM Serif Display', serif;
+      --font-body:    'DM Sans', sans-serif;
+
+      --max-w: 900px;
+      --section-pad: 80px 24px;
+    }
+
+    /* ============================================
+       RESET & BASE
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ============================================
+       NOISE TEXTURE OVERLAY
+    ============================================ */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ============================================
+       UTILITY
+    ============================================ */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gold-line {
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 0 auto 28px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      border: 1px solid var(--gold-dim);
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+
+    /* ============================================
+       NAV BAR
+    ============================================ */
+    .nav {
+      background: var(--dark);
+      border-bottom: 1px solid rgba(200,164,74,0.2);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: var(--cream);
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--dark);
+      background: var(--gold);
+      padding: 9px 20px;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* ============================================
+       HERO
+    ============================================ */
+    .hero {
+      background: var(--dark);
+      padding: 80px 24px 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(ellipse at center, rgba(200,164,74,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-free-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,164,74,0.12);
+      border: 1px solid var(--gold-dim);
+      padding: 7px 18px;
+      margin-bottom: 32px;
+      animation: fadeDown 0.6s ease both;
+    }
+
+    .hero-free-badge span {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      color: var(--gold);
+    }
+
+    .hero-free-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 9vw, 96px);
+      line-height: 0.9;
+      letter-spacing: 2px;
+      color: var(--cream);
+      margin-bottom: 10px;
+      animation: fadeUp 0.7s ease 0.1s both;
+    }
+
+    .hero h1 .accent {
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 3.5vw, 28px);
+      font-style: italic;
+      color: var(--cream-mid);
+      margin-bottom: 36px;
+      animation: fadeUp 0.7s ease 0.2s both;
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(244,237,216,0.7);
+      max-width: 600px;
+      margin: 0 auto 48px;
+      animation: fadeUp 0.7s ease 0.3s both;
+    }
+
+    .hero-form-wrap {
+      max-width: 520px;
+      margin: 0 auto;
+      animation: fadeUp 0.7s ease 0.4s both;
+    }
+
+    /* ============================================
+       STATS BAR
+    ============================================ */
+    .stats-bar {
+      background: var(--dark-mid);
+      border-top: 1px solid rgba(200,164,74,0.15);
+      border-bottom: 1px solid rgba(200,164,74,0.15);
+      padding: 36px 24px;
+    }
+
+    .stats-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 48px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(244,237,216,0.55);
+      max-width: 140px;
+      margin: 0 auto;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 60px;
+      background: rgba(200,164,74,0.2);
+    }
+
+    /* ============================================
+       WHAT'S INSIDE
+    ============================================ */
+    .inside {
+      background: var(--cream);
+      color: var(--dark);
+      padding: var(--section-pad);
+      text-align: center;
+    }
+
+    .inside .section-label {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: var(--gold-dim);
+      margin-bottom: 12px;
+    }
+
+    .inside h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 6vw, 60px);
+      letter-spacing: 2px;
+      color: var(--dark);
+      margin-bottom: 14px;
+    }
+
+    .inside .intro {
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(26,26,26,0.65);
+      max-width: 560px;
+      margin: 0 auto 56px;
+    }
+
+    .mistakes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+      text-align: left;
+    }
+
+    .mistake-card {
+      background: var(--dark);
+      color: var(--cream);
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .mistake-card:hover { transform: translateY(-4px); }
+
+    .mistake-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .mistake-card:hover::before { transform: scaleX(1); }
+
+    .mistake-number {
+      font-family: var(--font-display);
+      font-size: 64px;
+      color: rgba(200,164,74,0.15);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .mistake-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .mistake-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(244,237,216,0.65);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       FOR WHO
+    ============================================ */
+    .for-who {
+      background: var(--dark);
+      padding: var(--section-pad);
+    }
+
+    .for-who-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .for-who-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .for-who-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 6vw, 58px);
+      letter-spacing: 2px;
+      color: var(--cream);
+    }
+
+    .for-who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .for-who-card {
+      border: 1px solid rgba(200,164,74,0.2);
+      padding: 36px 32px;
+    }
+
+    .for-who-card h3 {
+      font-family: var(--font-display);
+      font-size: 24px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(200,164,74,0.2);
+    }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(244,237,216,0.8);
+      line-height: 1.5;
+    }
+
+    .check-list li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 14px;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    /* ============================================
+       MAIN OPT-IN SECTION
+    ============================================ */
+    .optin-section {
+      background: var(--cream);
+      color: var(--dark);
+      padding: var(--section-pad);
+      text-align: center;
+    }
+
+    .optin-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 6vw, 62px);
+      letter-spacing: 2px;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+
+    .optin-section p {
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(26,26,26,0.6);
+      max-width: 520px;
+      margin: 0 auto 40px;
+    }
+
+    .optin-box {
+      max-width: 500px;
+      margin: 0 auto;
+      background: var(--dark);
+      padding: 40px 36px;
+    }
+
+    /* ============================================
+       MAILERLITE FORM STYLES
+       (These style both the hero form and the
+        main opt-in box. MailerLite respects
+        parent container styles when embedded.)
+    ============================================ */
+    .ml-form-wrapper {
+      width: 100%;
+    }
+
+    /* Override MailerLite defaults to match brand */
+    .ml-form-wrapper .ml-form-embedBody {
+      background: transparent !important;
+      padding: 0 !important;
+    }
+
+    .ml-form-wrapper .ml-field-group input {
+      width: 100%;
+      padding: 16px 18px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 400;
+      background: rgba(244,237,216,0.08);
+      border: 1px solid rgba(200,164,74,0.3);
+      color: var(--cream);
+      outline: none;
+      margin-bottom: 12px;
+      border-radius: 0 !important;
+      transition: border-color 0.2s;
+    }
+
+    .ml-form-wrapper .ml-field-group input::placeholder {
+      color: rgba(244,237,216,0.4);
+    }
+
+    .ml-form-wrapper .ml-field-group input:focus {
+      border-color: var(--gold);
+    }
+
+    .ml-form-wrapper .ml-form-embedSubmit button {
+      width: 100%;
+      padding: 18px 24px;
+      font-family: var(--font-display);
+      font-size: 20px;
+      letter-spacing: 2px;
+      color: var(--dark);
+      background: var(--gold);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      border-radius: 0 !important;
+    }
+
+    .ml-form-wrapper .ml-form-embedSubmit button:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* Hero form — lighter input backgrounds */
+    .hero .ml-form-wrapper .ml-field-group input {
+      background: rgba(244,237,216,0.06);
+      border-color: rgba(200,164,74,0.25);
+    }
+
+    /* Optin box — slightly lighter on dark bg */
+    .optin-box .ml-form-wrapper .ml-field-group input {
+      background: rgba(244,237,216,0.07);
+    }
+
+    /* FALLBACK FORM — shown only if MailerLite hasn't loaded */
+    .fallback-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .fallback-form input {
+      width: 100%;
+      padding: 16px 18px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      background: rgba(244,237,216,0.07);
+      border: 1px solid rgba(200,164,74,0.3);
+      color: var(--cream);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .fallback-form input::placeholder { color: rgba(244,237,216,0.4); }
+    .fallback-form input:focus { border-color: var(--gold); }
+
+    .btn-gold {
+      display: block;
+      width: 100%;
+      padding: 18px 24px;
+      font-family: var(--font-display);
+      font-size: 22px;
+      letter-spacing: 2.5px;
+      color: var(--dark);
+      background: var(--gold);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .form-note {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(244,237,216,0.35);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* For the cream section form note */
+    .optin-section .form-note-light {
+      font-size: 12px;
+      color: rgba(26,26,26,0.4);
+      margin-top: 14px;
+    }
+
+    /* ============================================
+       SOCIAL PROOF QUOTE
+    ============================================ */
+    .quote-section {
+      background: var(--dark-mid);
+      padding: 64px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(200,164,74,0.15);
+      border-bottom: 1px solid rgba(200,164,74,0.15);
+    }
+
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: clamp(22px, 4vw, 32px);
+      font-style: italic;
+      color: var(--cream);
+      max-width: 680px;
+      margin: 0 auto 24px;
+      line-height: 1.5;
+    }
+
+    .quote-attr {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .footer {
+      background: var(--dark);
+      padding: 40px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(200,164,74,0.12);
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      letter-spacing: 3px;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: rgba(244,237,216,0.35);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      font-size: 12px;
+      color: rgba(244,237,216,0.3);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ============================================
+       ANIMATIONS
+    ============================================ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 640px) {
+      .for-who-grid { grid-template-columns: 1fr; }
+      .stat-divider { display: none; }
+      .optin-box { padding: 28px 20px; }
+      .mistakes-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ============================================
+       MAILERLITE BRAND OVERRIDES
+       Force TGP styles over MailerLite defaults
+    ============================================ */
+
+    /* Hide MailerLite's default header/content text */
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
+      display: none !important;
+    }
+
+    /* Strip the grey wrapper background */
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper {
+      background-color: transparent !important;
+      border-radius: 0 !important;
+      border: none !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      display: block !important;
+    }
+
+    #mlb2-38720406.ml-form-embedContainer {
+      width: 100% !important;
+      display: block !important;
+    }
+
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+      padding: 0 !important;
+      background: transparent !important;
+    }
+
+    /* Inputs — dark theme */
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+      background-color: rgba(244,237,216,0.07) !important;
+      color: #F4EDD8 !important;
+      border-color: rgba(200,164,74,0.3) !important;
+      border-radius: 0 !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 15px !important;
+      padding: 16px 18px !important;
+      margin-bottom: 12px !important;
+    }
+
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder {
+      color: rgba(244,237,216,0.4) !important;
+    }
+
+    /* Submit button — TGP gold */
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.primary {
+      background-color: #C8A44A !important;
+      border: none !important;
+      border-radius: 0 !important;
+      color: #1A1A1A !important;
+      font-family: 'Bebas Neue', sans-serif !important;
+      font-size: 22px !important;
+      font-weight: 400 !important;
+      letter-spacing: 2.5px !important;
+      padding: 16px 24px !important;
+      transition: background 0.2s !important;
+    }
+
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.primary:hover {
+      background-color: #E0BC6E !important;
+    }
+
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit {
+      margin-bottom: 0 !important;
+    }
+
+    /* Labels hidden (placeholders do the job) */
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label {
+      display: none !important;
+    }
+
+    /* Success state */
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+      background: transparent !important;
+    }
+
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+      color: #C8A44A !important;
+      font-family: 'Bebas Neue', sans-serif !important;
+      font-size: 28px !important;
+      letter-spacing: 2px !important;
+    }
+
+    #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
+      color: rgba(244,237,216,0.75) !important;
+      font-family: 'DM Sans', sans-serif !important;
+    }
+
+    /* Optin section (cream bg) — darken inputs for contrast */
+    .optin-box #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+      background-color: rgba(26,26,26,0.08) !important;
+      color: #1A1A1A !important;
+      border-color: rgba(160,126,52,0.4) !important;
+    }
+
+    .optin-box #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder {
+      color: rgba(26,26,26,0.4) !important;
+    }
+
+    .optin-box #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+      color: #A07E34 !important;
+    }
+
+    .optin-box #mlb2-38720406.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
+      color: rgba(26,26,26,0.7) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav-logo">TGP <span>·</span> TOTAL GAME PERFORMANCE</div>
+    <a href="#get-guide" class="nav-cta">Get Free Guide</a>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-free-badge">
+        <span class="dot"></span>
+        <span>FREE GUIDE — INSTANT DOWNLOAD</span>
+        <span class="dot"></span>
+      </div>
+
+      <h1>
+        THE <span class="accent">5 MENTAL</span><br>MISTAKES
+      </h1>
+      <p class="hero-sub">Soccer Players Make Under Pressure</p>
+      <p class="hero-desc">
+        The science-backed guide for players aged 12–22 (and the parents who support them).
+        Identify the mental mistakes killing your game — and get exact fixes for every one.
+      </p>
+
+      <!-- ===================================================
+           HERO MAILERLITE FORM
+           INSTRUCTIONS: Replace everything inside
+           .hero-form-wrap with your MailerLite embed code.
+           Steps:
+           1. Log into MailerLite
+           2. Go to Forms → Embedded Forms → Create New
+           3. Copy the embed code snippet
+           4. Paste it here replacing the placeholder below
+           5. The CSS above will automatically style it
+      =================================================== -->
+      <div class="hero-form-wrap" id="get-guide">
+
+        <!-- MailerLite form -->
+        <div id="mlb2-38720406" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38720406">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent" style="display:none"></div>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2110679/forms/182398136275175394/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow">
+                      <div class="ml-field-group ml-field-name">
+                        <input aria-label="name" type="text" class="form-control" name="fields[name]" placeholder="First Name" autocomplete="given-name">
+                      </div>
+                    </div>
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email Address" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">SEND ME THE FREE GUIDE →</button>
+                    <button disabled="disabled" style="display:none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Loading...</span>
+                    </button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+              <div class="ml-form-successBody row-success" style="display:none">
+                <div class="ml-form-successContent">
+                  <h4>You're In!</h4>
+                  <p>Check your inbox — your free guide is on its way.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="form-note">No spam. No BS. Unsubscribe any time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-number">92%</div>
+        <div class="stat-label">of elite athletes say mental performance determines success</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">6–8</div>
+        <div class="stat-label">minutes average mistake recovery without mental training</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">40%</div>
+        <div class="stat-label">drop in decision-making speed when cortisol spikes</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number">&lt;60s</div>
+        <div class="stat-label">recovery time possible with a trained mental reset system</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== WHAT'S INSIDE ===== -->
+  <section class="inside">
+    <div class="container">
+      <p class="section-label">WHAT'S INSIDE THE FREE GUIDE</p>
+      <h2>THE 5 MISTAKES</h2>
+      <p class="intro">Every mistake comes with the science, the warning signs, and a practical drill to fix it — for both players and parents.</p>
+
+      <div class="mistakes-grid">
+        <div class="mistake-card">
+          <div class="mistake-number">01</div>
+          <div class="mistake-title">Living In The Last Mistake</div>
+          <p class="mistake-desc">The replay loop that keeps players mentally stuck while the game moves on — and how to break it in under 60 seconds.</p>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-number">02</div>
+          <div class="mistake-title">Outcome Thinking</div>
+          <p class="mistake-desc">Why thinking about the score kills performance — and the process anchor that keeps elite players in the moment.</p>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-number">03</div>
+          <div class="mistake-title">Pressure Paralysis</div>
+          <p class="mistake-desc">The reason big games produce smaller performances — and the reappraisal technique that flips the switch.</p>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-number">04</div>
+          <div class="mistake-title">Error Avoidance</div>
+          <p class="mistake-desc">Playing not to fail instead of playing to win — why it causes more mistakes, and how to rewire the mindset.</p>
+        </div>
+        <div class="mistake-card">
+          <div class="mistake-number">05</div>
+          <div class="mistake-title">No Mental System</div>
+          <p class="mistake-desc">Warming up the body but leaving the mind to chance — and the 3-part pre-game system that fixes inconsistency for good.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUOTE ===== -->
+  <section class="quote-section">
+    <div class="container">
+      <p class="quote-text">"The mental game is the most trained and least coached aspect of soccer. Technical ability gets players to the game. Mental performance determines what they do when it actually matters."</p>
+      <p class="quote-attr">— Dan, Total Game Performance</p>
+    </div>
+  </section>
+
+  <!-- ===== WHO IT'S FOR ===== -->
+  <section class="for-who">
+    <div class="for-who-inner">
+      <div class="for-who-header">
+        <span class="tag">WHO THIS IS FOR</span>
+        <h2>PLAYERS & PARENTS</h2>
+      </div>
+      <div class="for-who-grid">
+        <div class="for-who-card">
+          <h3>FOR PLAYERS</h3>
+          <ul class="check-list">
+            <li>You play well in training but something changes on game day</li>
+            <li>One mistake can derail your whole performance</li>
+            <li>You feel nervous, tight, or 'in your head' under pressure</li>
+            <li>You want to compete with more confidence and consistency</li>
+          </ul>
+        </div>
+        <div class="for-who-card">
+          <h3>FOR PARENTS</h3>
+          <ul class="check-list">
+            <li>Your child struggles to bounce back from mistakes during games</li>
+            <li>You see them freeze up or get frustrated in high-pressure moments</li>
+            <li>You want to support their mental game but don't know how</li>
+            <li>You're looking for a language to talk about mental performance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAIN OPT-IN ===== -->
+  <section class="optin-section">
+    <div class="container">
+      <span class="gold-line"></span>
+      <h2>GET YOUR FREE GUIDE</h2>
+      <p>Send it to your player, read it together, or both. 100% free — no credit card, no catch.</p>
+
+      <div class="optin-box">
+
+        <!-- MailerLite form (second instance — same form, same list) -->
+        <div id="mlb2-38720406-2" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-38720406">
+          <div class="ml-form-align-center">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <div class="ml-form-embedContent" style="display:none"></div>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2110679/forms/182398136275175394/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow">
+                      <div class="ml-field-group ml-field-name">
+                        <input aria-label="name" type="text" class="form-control" name="fields[name]" placeholder="First Name" autocomplete="given-name">
+                      </div>
+                    </div>
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email Address" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">SEND ME THE FREE GUIDE →</button>
+                    <button disabled="disabled" style="display:none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Loading...</span>
+                    </button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+              <div class="ml-form-successBody row-success" style="display:none">
+                <div class="ml-form-successContent">
+                  <h4>You're In!</h4>
+                  <p>Check your inbox — your free guide is on its way.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <p class="form-note">No spam. No BS. Unsubscribe any time.</p>
+      <p class="form-note-light">Designed for serious soccer players aged 12–22 and their parents.</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">TGP <span>·</span> TOTAL GAME PERFORMANCE</div>
+    <p class="footer-tagline">Mental Performance Coaching for Soccer Players</p>
+    <div class="footer-links">
+      <a href="https://totalgameperformance.com">totalgameperformance.com</a>
+      <a href="/cdn-cgi/l/email-protection#1074717e50647f64717c77717d75607562767f627d717e73753e737f7d">Contact</a>
+    </div>
+  </footer>
+
+  <!-- MailerLite JS -->
+  <script>
+    function ml_webform_success_38720406() {
+      var $ = ml_jQuery || jQuery;
+      $('.ml-subscribe-form-38720406 .row-success').show();
+      $('.ml-subscribe-form-38720406 .row-form').hide();
+    }
+  </script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+  <script>
+    fetch("https://assets.mailerlite.com/jsonp/2110679/forms/182398136275175394/takel");
+  </script>
+
+  <!-- TGP Brand Override — runs after MailerLite injects its styles -->
+  <script>
+    function applyTGPStyles() {
+      // All inputs
+      document.querySelectorAll('.ml-subscribe-form-38720406 .ml-form-fieldRow input').forEach(function(el) {
+        el.style.cssText = [
+          'background-color: rgba(244,237,216,0.07) !important',
+          'color: #F4EDD8 !important',
+          'border: 1px solid rgba(200,164,74,0.3) !important',
+          'border-radius: 0 !important',
+          'font-family: DM Sans, sans-serif !important',
+          'font-size: 15px !important',
+          'padding: 16px 18px !important',
+          'width: 100% !important',
+          'box-sizing: border-box !important',
+          'margin-bottom: 12px !important',
+          'display: block !important'
+        ].join(';');
+      });
+
+      // Inputs inside the cream optin box get dark text
+      document.querySelectorAll('.optin-box .ml-form-fieldRow input').forEach(function(el) {
+        el.style.cssText = [
+          'background-color: rgba(26,26,26,0.08) !important',
+          'color: #1A1A1A !important',
+          'border: 1px solid rgba(160,126,52,0.4) !important',
+          'border-radius: 0 !important',
+          'font-family: DM Sans, sans-serif !important',
+          'font-size: 15px !important',
+          'padding: 16px 18px !important',
+          'width: 100% !important',
+          'box-sizing: border-box !important',
+          'margin-bottom: 12px !important',
+          'display: block !important'
+        ].join(';');
+      });
+
+      // Submit buttons
+      document.querySelectorAll('.ml-subscribe-form-38720406 .ml-form-embedSubmit button.primary').forEach(function(el) {
+        el.style.cssText = [
+          'background-color: #C8A44A !important',
+          'border: none !important',
+          'border-radius: 0 !important',
+          'color: #1A1A1A !important',
+          'font-family: Bebas Neue, sans-serif !important',
+          'font-size: 22px !important',
+          'font-weight: 400 !important',
+          'letter-spacing: 2.5px !important',
+          'padding: 18px 24px !important',
+          'width: 100% !important',
+          'cursor: pointer !important',
+          'display: block !important'
+        ].join(';');
+
+        el.addEventListener('mouseenter', function() { this.style.backgroundColor = '#E0BC6E'; });
+        el.addEventListener('mouseleave', function() { this.style.backgroundColor = '#C8A44A'; });
+      });
+
+      // Strip grey wrapper backgrounds
+      document.querySelectorAll('.ml-subscribe-form-38720406 .ml-form-embedWrapper').forEach(function(el) {
+        el.style.cssText = 'background-color: transparent !important; border: none !important; width: 100% !important; max-width: 100% !important; display: block !important; border-radius: 0 !important;';
+      });
+
+      document.querySelectorAll('.ml-subscribe-form-38720406 .ml-form-embedBody').forEach(function(el) {
+        el.style.cssText = 'padding: 0 !important; background: transparent !important;';
+      });
+
+      document.querySelectorAll('.ml-subscribe-form-38720406 .ml-form-embedContent').forEach(function(el) {
+        el.style.display = 'none';
+      });
+
+      document.querySelectorAll('.ml-subscribe-form-38720406 .ml-block-form .ml-field-group label').forEach(function(el) {
+        el.style.display = 'none';
+      });
+    }
+
+    // Run once immediately, then again after a short delay to catch async MailerLite render
+    applyTGPStyles();
+    setTimeout(applyTGPStyles, 500);
+    setTimeout(applyTGPStyles, 1500);
+  </script>
+
+</body>
+</html>
