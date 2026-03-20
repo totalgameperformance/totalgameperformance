@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're In — Total Game Performance</title>
+  <meta name="description" content="Your free guide is on its way. Check your inbox." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream:      #F4EDD8;
+      --cream-mid:  #EDE0C4;
+      --dark:       #1A1A1A;
+      --dark-mid:   #242424;
+      --dark-card:  #202020;
+      --gold:       #C8A44A;
+      --gold-light: #E0BC6E;
+      --gold-dim:   #A07E34;
+
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-serif:   'DM Serif Display', serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* grain */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.5;
+    }
+
+    /* ── HEADER ── */
+    header {
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(200,164,74,0.12);
+      animation: fadeDown 0.5s ease both;
+    }
+
+    .logo-tgp {
+      font-family: var(--font-display);
+      font-size: 22px;
+      letter-spacing: 4px;
+      color: var(--gold);
+    }
+
+    .logo-full {
+      font-family: var(--font-display);
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: rgba(244,237,216,0.4);
+      display: block;
+      margin-top: 1px;
+    }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    main::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(200,164,74,0.09) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── CHECK ICON ── */
+    .check-wrap {
+      width: 72px;
+      height: 72px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+      animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s both;
+    }
+
+    .check-wrap svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--gold);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .check-path {
+      stroke-dasharray: 40;
+      stroke-dashoffset: 40;
+      animation: drawCheck 0.4s ease 0.7s forwards;
+    }
+
+    /* ── HEADLINE ── */
+    .eyebrow {
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      margin-bottom: 16px;
+      animation: fadeUp 0.6s ease 0.3s both;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 10vw, 88px);
+      line-height: 0.88;
+      letter-spacing: 1px;
+      color: var(--cream);
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s ease 0.35s both;
+    }
+
+    h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .sub {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(17px, 3vw, 22px);
+      color: rgba(244,237,216,0.65);
+      max-width: 460px;
+      margin: 0 auto 48px;
+      line-height: 1.5;
+      animation: fadeUp 0.6s ease 0.4s both;
+    }
+
+    /* ── INBOX NOTE ── */
+    .inbox-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(200,164,74,0.08);
+      border: 1px solid rgba(200,164,74,0.2);
+      padding: 14px 22px;
+      margin-bottom: 56px;
+      animation: fadeUp 0.6s ease 0.45s both;
+    }
+
+    .inbox-note svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.8;
+      flex-shrink: 0;
+    }
+
+    .inbox-note p {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(244,237,216,0.7);
+      text-align: left;
+      line-height: 1.5;
+    }
+
+    .inbox-note strong {
+      color: var(--cream);
+      font-weight: 600;
+    }
+
+    /* ── DIVIDER ── */
+    .gold-rule {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto 48px;
+      animation: fadeUp 0.6s ease 0.5s both;
+    }
+
+    .gold-rule::before,
+    .gold-rule::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(200,164,74,0.25), transparent);
+    }
+
+    .diamond {
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* ── NEXT STEP ── */
+    .next-label {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--gold-dim);
+      margin-bottom: 20px;
+      animation: fadeUp 0.6s ease 0.55s both;
+    }
+
+    .playbook-card {
+      max-width: 440px;
+      width: 100%;
+      background: var(--dark-card);
+      border: 1px solid rgba(200,164,74,0.25);
+      padding: 28px 28px 24px;
+      text-align: left;
+      transition: border-color 0.2s, transform 0.2s;
+      animation: fadeUp 0.6s ease 0.6s both;
+      display: block;
+    }
+
+    .playbook-card:hover {
+      border-color: rgba(200,164,74,0.55);
+      transform: translateY(-3px);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .card-badge {
+      font-family: var(--font-display);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--gold);
+      border: 1px solid rgba(200,164,74,0.35);
+      padding: 3px 8px;
+    }
+
+    .card-price {
+      font-family: var(--font-display);
+      font-size: 20px;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      letter-spacing: 1.5px;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(244,237,216,0.6);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .card-cta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .card-arrow { transition: transform 0.2s; }
+    .playbook-card:hover .card-arrow { transform: translateX(4px); }
+
+    /* ── SKIP LINK ── */
+    .skip-link {
+      display: block;
+      margin-top: 20px;
+      font-size: 12px;
+      color: rgba(244,237,216,0.3);
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+      animation: fadeUp 0.6s ease 0.65s both;
+    }
+
+    .skip-link:hover { color: rgba(244,237,216,0.6); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 24px 32px 32px;
+      border-top: 1px solid rgba(200,164,74,0.08);
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: rgba(200,164,74,0.35);
+      margin-bottom: 4px;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(244,237,216,0.18);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 20px; }
+      main { padding: 48px 20px; }
+      .playbook-card { padding: 22px 20px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div>
+      <span class="logo-tgp">TGP</span>
+      <span class="logo-full">TOTAL GAME PERFORMANCE</span>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- Check icon -->
+    <div class="check-wrap">
+      <svg viewBox="0 0 24 24">
+        <polyline class="check-path" points="4,12 9,17 20,6" />
+      </svg>
+    </div>
+
+    <p class="eyebrow">YOU'RE IN</p>
+
+    <h1>GUIDE IS<br>ON ITS <em>WAY</em></h1>
+
+    <p class="sub">Check your inbox — the 5 Mental Mistakes guide is heading to you now.</p>
+
+    <!-- Inbox note -->
+    <div class="inbox-note">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+        <polyline points="22,6 12,13 2,6"/>
+      </svg>
+      <p><strong>Can't find it?</strong> Check your spam or promotions folder and move it to your inbox so you don't miss what's coming next.</p>
+    </div>
+
+    <!-- Divider -->
+    <div class="gold-rule"><div class="diamond"></div></div>
+
+    <!-- Next step -->
+    <p class="next-label">WHILE YOU WAIT — YOUR NEXT STEP</p>
+
+    <a href="/playbook" class="playbook-card">
+      <div class="card-top">
+        <span class="card-badge">DIGITAL WORKBOOK</span>
+        <span class="card-price">$47</span>
+      </div>
+      <div class="card-title">THE MENTAL EDGE PLAYBOOK</div>
+      <p class="card-desc">The guide shows you the mistakes. The Playbook gives you the complete 5-day system to fix them — with daily exercises, writing prompts and field challenges for every mental performance skill.</p>
+      <div class="card-cta">Get the Playbook <span class="card-arrow">→</span></div>
+    </a>
+
+    <a href="/" class="skip-link">No thanks — take me to the homepage</a>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">TGP · TOTAL GAME PERFORMANCE</div>
+    <p class="footer-copy">© Total Game Performance · totalgameperformance.com</p>
+  </footer>
+
+</body>
+</html>
